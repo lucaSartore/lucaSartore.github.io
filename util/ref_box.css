@@ -1,0 +1,68 @@
+.ref_box{
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    
+    margin-top: 3cm;
+    width: 75%;
+    border-radius: 0.6cm;
+    box-shadow:
+    0.1cm 0.1cm 0.5cm #f0f,
+    -0.1cm -0.1cm 0.5cm #0ff,
+    inset -0.1cm -0.1cm 0.5cm 1px #f0f,
+    inset 0.1cm 0.1cm 0.5cm 1px #0ff;
+    transition: box-shadow 0.2s ease-out 10ms;
+
+    display: grid;
+    grid-template: auto / auto auto;
+}
+
+.ref_box > div > h1{
+    color: white;
+    margin-left: 4%;
+    margin-top: 3%;
+    font-family: 'Chivo';font-size: 35px;
+    display: inline-block;
+}
+
+.ref_box > div > a{
+    color: white;
+    margin-right: 7%;
+    margin-top:  7%;
+    float: right;
+    padding: 0.2cm;
+    border-radius: 0.5cm;
+    font-family: 'Chivo';font-size: 25px;
+    text-decoration: none;
+    border-color: white;
+    border-style: solid;
+}
+
+
+
+.ref_box >  div > img{
+    margin-right: 7%;
+    margin-top: 0.5%;
+    margin-bottom: 4%;
+    border-radius: 15%;
+    border-color: white;
+    border-style: solid;
+    float: right;
+}
+
+.ref_box > div > p{
+    color: white;
+    margin-left: 4%;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    font-family: 'Chivo';font-size: 20px;
+    /*display: inline-block;*/
+    
+}
+
+.ref_box:hover{
+    box-shadow:
+    0.2cm 0.2cm 0.5cm #f0f,
+    -0.2cm -0.2cm 0.5cm #0ff,
+    inset -0.2cm -0.2cm 0.9cm 1px #f0f,
+    inset 0.2cm 0.2cm 0.9cm 1px #0ff;
+}
