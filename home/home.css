@@ -1,5 +1,33 @@
 
-body, html {
-    background: #242f36;
-    background-attachment: fixed;
+#home_img{
+    width: 75%;	
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    display: block;
+}
+
+
+.text_section > .title{
+    color: white;
+    margin-left: 15%;
+    margin-right: 12.5%;
+    margin-top: 2cm;
+    margin-bottom: 0.5cm;
+    font-family: 'Chivo';font-size: 35px;
+}
+
+.text_section > .text{
+    color: white;
+    margin-top: 0;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    font-family: 'Chivo';font-size: 22px;
+}
+
+.text_section > img{
+    width: 35%;	
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
