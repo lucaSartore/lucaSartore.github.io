@@ -3,8 +3,11 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../util/background.css">
     <link rel="stylesheet" type="text/css" href="../util/topbar.css">
+    <link rel="stylesheet" type="text/css" href="../util/ref_box.css">
+    <link rel="stylesheet" type="text/css" href="../util/glowing_border.css">
+    <link rel="stylesheet" type="text/css" href="../util/border_image.css">
     <link href='https://fonts.googleapis.com/css?family=Chivo' rel='stylesheet'>
-    <title>Luca Sartore - Portfolio</title>
+    <title>Luca Sartore - Contacts</title>
 </head>
 
 <body id="background"> 
@@ -20,9 +23,86 @@
 
     <div class="content">
 
+        <div class="ref_box">
+            <div><h1>Puzzle Solver</h1></div>
+            <div><a href="https://github.com/lucaSartore/Puzzle_Solver" target="_blank">Check Out</a></div>
+            <div><p>
+
+                I developed an algorithm that can solve small-sized puzzles.
+                The algorithm takes as input one or more images containing pieces of a shuffled puzzle,
+                captured using a printer's scanner. It utilizes computer
+                vision and an algorithm to find the solution to the puzzle.<br><br>
+
+                The app is built using three different languages:<br><br>
+                
+                 - C# was used to develop the UI.<br>
+                 - C++ was employed for the computer vision component, leveraging the OpenCV library.<br>
+                 - Rust was utilized for the solution finder itself.<br><br>
+
+                The entire program is designed to scale efficiently with multiple cores and is dynamically linked using DLLs."
+
+            </p></div>
+            <div><img src="puzzle_solver.png" width="90%" class="border_image"></div>
+        </div>
+
+        <div class="ref_box">
+            <div><h1>My RoboCup Robot</h1></div>
+            <div><a href="https://youtu.be/BX4bzpjkO5k" target="_blank">Check Out</a></div>
+            <div><p>
+
+                A robot developed by me and four other people, for the RobCup junior competition.<br><br>
+
+                The robot is entirely designed in 3D and is made of 30+ pieces, and is 3D printed using a combination of PLA and resin.<br><br>
+
+                In total the robot has 11 motors, 4 ultrasonic distance sensors and one camera. <br><br>
+
+                The program runs on a raspberry PI and is made in python using the OpenCV library We have also trained
+                a custom machine learning model for object detection, and used a Google Coral TPU as an hardware accelerator,
+                since the raspberry pi was too slow.<br><br>
+            </p></div>
+            <div><img src="robocup.jpg" width="90%" class="border_image"></div>
+        </div>
+
+        <div class="ref_box">
+            <div><h1>This website</h1></div>
+            <div><a href="https://github.com/lucaSartore/lucaSartore.github.io" target="_blank">Check Out</a></div>
+            <div><p>This website is my first awful attempt at web development.</p></div>
+            <div><img src="website.png" width="90%" class="border_image"></div>
+        </div>
+
+        <div class="ref_box">
+            <div><h1> RoboCup RescueLine Simulation</h1></div>
+            <div><a href="https://github.com/lucaSartore/Robocup-Rescue-Line-simulation" target="_blank">Check Out</a></div>
+            <div><p>
+                I developed a real-time python simulation of the RoboCup rescue line competition.
+                This was done to help my team develop the code faster, without the limitation of one single physical robot.<br><br>
+
+                It turned out really effective, so much so that I decided to publish it for other teams to use it.
+            </p></div>
+            <div><img src="robocup_sim.png" width="90%" class="border_image"></div>
+        </div>
+
+        <div class="ref_box">
+            <div><h1> VHDL_UART-rs</h1></div>
+            <div><a href="https://github.com/lucaSartore/VHDL_UART-rs" target="_blank">Check Out</a></div>
+            <div><p>
+                A Rust library that allows you to send and receive data to a VHDL program using a serial interface.<br><br>
+
+                The program uses Rust’s powerful macros, to automatically convert many types to VHDL, using a derivable Trait.
+            </p></div>
+            <div><img src="vhdl_rs.jpg" width="90%" class="border_image"></div>
+        </div>
+
+        <div class="ref_box">
+            <div><h1> Minesweeper</h1></div>
+            <div><a href="https://github.com/lucaSartore/minesweeper_C_Sharp" target="_blank">Check Out</a></div>
+            <div><p>This is my first c# project, an implementation of the game minesweeper</p></div>
+            <div><img src="minesweeper.png" width="90%" class="border_image"></div>
+        </div>
+
+        <br><br><br>
     </div>
 
-    <script src="home.js"></script>
     <script src="../util/toolbar.js"></script>
     <script src="../util/background.js"></script>
 </body>

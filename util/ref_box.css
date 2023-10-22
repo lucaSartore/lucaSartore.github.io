@@ -1,12 +1,13 @@
 .ref_box{
     display: grid;
-    grid-template: auto / auto auto;
+    grid-template: 2.5cm / 70% auto;
 }
 
 .ref_box > div > h1{
     color: white;
-    margin-left: 4%;
-    margin-top: 3%;
+    padding-left: 7%;
+    padding-top: 3%;
+    margin: 0 0 0 0;
     font-family: 'Chivo';font-size: 35px;
     display: inline-block;
 }
