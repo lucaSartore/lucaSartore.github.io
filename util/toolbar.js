@@ -2,21 +2,21 @@
 const home_selector = document.getElementById('home_selector');
 const portfolio_selector = document.getElementById('portfolio_selector');
 const services_selector = document.getElementById('services_selector');
+const contacts_selector = document.getElementById('contacts_selector');
+
+const all_selectors = [home_selector, portfolio_selector, services_selector, contacts_selector]
 
 // this is a <div> element
 const top_bar = document.getElementById('top_bar');
 
 var selected_button;
-[home_selector, portfolio_selector, services_selector].forEach(button => {
+all_selectors.forEach(button => {
     if(button.classList.contains('selector_main')){
         selected_button = button;
     }
+    add_button_animation(button);
 });
 
-
-add_button_animation(home_selector);
-add_button_animation(portfolio_selector);
-add_button_animation(services_selector);
 
 function add_button_animation(button){
 // hover animation
@@ -61,5 +61,8 @@ function next_page(button){
     }
     if (button == services_selector) {
         window.location.href = "../services/services.html";
+    }
+    if (button == contacts_selector) {
+        window.location.href = "../contacts/contacts.html";
     }
 }
