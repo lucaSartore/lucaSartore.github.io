@@ -1,0 +1,78 @@
+
+.selector{
+    border-radius: 20px;
+    background-image: linear-gradient(to left, #FACF5A, #FF5959, #0170CA, #4F9DA6);
+    background-size: 400% 100%;
+    background-position: 0 0;
+    padding: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Chivo';font-size: 22px;
+}
+
+
+@keyframes selector_hover{
+    0% {
+        padding: 10px;
+        background-position: 0 0;
+    }
+    100% {
+        padding: 23px;
+        background-position: 50% 0;
+    }
+}
+
+@keyframes selector_hover_reverse{
+    from {
+        padding: 23px;
+        background-position:  50% 0;
+    }
+    to {
+        padding: 10px;
+        background-position: 0 0;
+    }
+}
+@keyframes selector_upgrade{
+    from {
+        padding: 23px;
+        background-position:  50% 0;
+    }
+    to {
+        padding: 23px;
+        background-position: 100% 0;
+    }
+}
+@keyframes selector_downgrade{
+    from {
+        padding: 23px;
+        background-position:  100% 0;
+    }
+    to {
+        padding: 10px;
+        background-position: 0% 0;
+    }
+}
+
+.selector_main{
+    border-radius: 20px;
+    background-image: linear-gradient(to left, #FACF5A, #FF5959, #0170CA, #4F9DA6);
+    background-size: 400% 100%;
+    background-position: 100% 0;
+    padding: 23px;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Chivo';font-size: 22px;
+    transition: padding linear 0.1s;
+}
+
+    
+
+.top_bar{
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
