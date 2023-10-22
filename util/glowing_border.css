@@ -1,0 +1,22 @@
+.glowing_border, .ref_box{
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    
+    margin-top: 3cm;
+    width: 75%;
+    border-radius: 0.6cm;
+    box-shadow:
+    0.1cm 0.1cm 0.5cm #f0f,
+    -0.1cm -0.1cm 0.5cm #0ff,
+    inset -0.1cm -0.1cm 0.5cm 1px #f0f,
+    inset 0.1cm 0.1cm 0.5cm 1px #0ff;
+    transition: box-shadow 0.2s ease-out 10ms;
+}
+
+.ref_box:hover, .glowing_border:hover{
+    box-shadow:
+    0.2cm 0.2cm 0.5cm #f0f,
+    -0.2cm -0.2cm 0.5cm #0ff,
+    inset -0.2cm -0.2cm 0.9cm 1px #f0f,
+    inset 0.2cm 0.2cm 0.9cm 1px #0ff;
+}
