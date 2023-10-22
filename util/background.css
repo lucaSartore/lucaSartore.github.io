@@ -1,5 +1,8 @@
-
-body, html {
-    background: #242f36;
-    background-attachment: fixed;
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-size: 200% 200%; 
+    background-image: radial-gradient(#390d37,#242f36);
 }
+  

@@ -69,10 +69,9 @@
     transition: padding linear 0.1s;
 }
 
-    
-
 .top_bar{
-    margin-top: 35px;
+    padding: 0;
+    margin-top: 0px;
     margin-bottom: 35px;
 }
 
