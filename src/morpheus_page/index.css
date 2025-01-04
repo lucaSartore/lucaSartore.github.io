@@ -1,12 +1,68 @@
-.main_div {
+#main_div {
     background-color: #000000;
     width: 100vw;
     height: 100vh;
 }
 
-.main_img {
-    position: absolute;
-    width: 100%;
+#img_div{
+    width:100%;
+    aspect-ratio: 8888 / 2400;
     bottom: 0;
     left: 0;
+    position: absolute;
+    overflow:hidden;
+}
+
+.image{
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#red_pill_div{
+  position:absolute;
+  width:2%;
+  height:7%;
+  /*border-style: solid;*/
+  /*border-color:#ff0000;*/
+  top:74%;
+  left:40%;
+  z-index: 3;
+}
+
+#blue_pill_div{
+  position:absolute;
+  width:2%;
+  height:7%;
+  /*border-style: solid;*/
+  /*border-color:#0000FF;*/
+  top:74%;
+  left:57.5%;
+  z-index: 3;
+}
+
+#red_pill_border{
+    opacity: 0;
+}
+
+#red_pill_div:hover ~ #red_pill_border {
+    opacity: 1;
+    z-idnex: 2;
+    transition: opacity 0.6s ease;
+    filter: drop-shadow(0 0 10px #FF0000);
+}
+
+#blue_pill_border{
+    opacity: 0;
+}
+
+#blue_pill_div:hover ~ #blue_pill_border {
+    opacity: 1;
+    z-idnex: 2;
+    transition: opacity 0.6s ease;
+    filter: drop-shadow(0 0 10px #0000FF);
 }
