@@ -2,11 +2,12 @@ import image from "../assets/morpheus.jpg";
 import blue_pill_border from "../assets/blue_pill_border.png";
 import red_pill_border from "../assets/red_pill_border.png";
 import "./index.css";
-import TypingText, {TypingTextRef} from "../components/textbox";
+import {TypingParagraph, TypingParagraphRef} from "../components/textbox";
 import { useRef } from "react";
 
 function MorpheusPage() {
-	const ref = useRef<TypingTextRef>(null);
+
+	const ref = useRef<TypingParagraphRef>(null);
 
 	return (
 		<>
@@ -21,7 +22,16 @@ function MorpheusPage() {
 					<img className="image" src={image} />
 					<img className="image" id="blue_pill_border" src={blue_pill_border} />
 					<img className="image" id="red_pill_border" src={red_pill_border} />
-					<TypingText ref={ref} className="red_pill_text_box" text = "the game!" />
+					<TypingParagraph ref={ref} className="red_pill_text_box" items={[
+                        {
+                            className: "",
+                            text: "title\n"
+                        },
+                        {
+                            className: "",
+                            text: "text text text"
+                        }
+                    ]} />
 				</div>
 			</div>
 		</>
