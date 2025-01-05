@@ -66,3 +66,18 @@
     transition: opacity 0.6s ease;
     filter: drop-shadow(0 0 10px #0000FF);
 }
+
+
+
+.red_pill_text_box {
+  position:absolute;
+  width:20%;
+  height:80%;
+  /*border-style: solid;*/
+  /*border-color:#0000FF;*/
+  top:10%;
+  left:10%;
+  z-index: 5;
+  color: #FF0000;
+  fond-size: 1000
+}
