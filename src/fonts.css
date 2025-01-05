@@ -1,0 +1,21 @@
+
+@import url('https://fonts.cdnfonts.com/css/home-video');
+
+.font-size-small {
+    font-size: 11pt;
+}
+
+
+.font-size-medium {
+    font-size: 18pt;
+}
+
+.font-size-large {
+    font-size: 22pt;
+}
+
+ .custom-font {
+    font-family: "", Courier;
+    font-display: swap;
+    font-weight: 400;
+}

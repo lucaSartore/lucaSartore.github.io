@@ -85,29 +85,33 @@
 
 
 
-
+@import url('https://fonts.cdnfonts.com/css/home-video');
 
 .red_pill_text_box {
   position:absolute;
-  width:20%;
+  width:31%;
   height:80%;
   /*border-style: solid;*/
   /*border-color:#0000FF;*/
   top:10%;
-  left:10%;
+  left:3%;
   z-index: 5;
   color: #D62246;
   fond-size: 1000
 }
 
+.pixel_font {
+  font: home-video;
+}
+
 .blue_pill_text_box {
   position:absolute;
-  width:20%;
+  width:31%;
   height:80%;
   /*border-style: solid;*/
   /*border-color:#0000FF;*/
   top:10%;
-  left:70%;
+  left:66%;
   z-index: 5;
   color: #57B8FF;
   fond-size: 1000

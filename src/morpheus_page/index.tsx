@@ -2,6 +2,7 @@ import image from "../assets/morpheus.jpg";
 import blue_pill_border from "../assets/blue_pill_border.png";
 import red_pill_border from "../assets/red_pill_border.png";
 import "./index.css";
+import "../fonts.css";
 import { TypingParagraph, TypingParagraphRef } from "../components/textbox";
 import { useRef } from "react";
 
@@ -29,22 +30,22 @@ function MorpheusPage() {
 					<TypingParagraph
 						ref={refRedText}
 						className="red_pill_text_box"
-                        typingTime={1000}
+                        typingTime={1500}
 						items={[
 							{
-								className: "",
+								className: "font-size-medium custom-font",
 								text: "Let’s have some fun!",
 							},
 							{
-								className: "",
-								text: `Explore my personal “Website-Game”... In order to get any information about me you will have to fight!`,
+								className: "font-size-small custom-font",
+								text: `Explore my personal “Website-Game”...`,
 							},
 							{
-								className: "",
-								text: `Explore an abandoned city and try to survive while hunted by a group of killer robots. If you manage to defeat them, and reach an “Information point” you will be rewarded with the ultimate treasure! (aka my contact info, my cv, my portfolio etcetera).`,
+								className: "font-size-small custom-font",
+								text: `You have been tasked with retrieving some extremely important data, to recover them you will need to explore an abandoned city full of killer robots. `,
 							},
 							{
-								className: "",
+								className: "font-size-small custom-font",
 								text: `Remember that if you change your mind you can always refresh the website and choose the blue pill.`, },
 						]}
 					/>
@@ -55,15 +56,15 @@ function MorpheusPage() {
                         typingTime={1000}
 						items={[
 							{
-								className: "",
+								className: "font-size-medium custom-font",
 								text: "Go straight to the point!",
 							},
 							{
-								className: "",
+								className: "font-size-small custom-font",
 								text: `You don’t have time to waste don’t you? I see, in this case you can choose the blue pill, and you will be able to immediately get what you are looking for.`,
 							},
 							{
-								className: "",
+								className: "font-size-small custom-font",
 								text: `Remember that if you change your mind you can always refresh the website and choose the red pill.`,
 							},
 						]}
