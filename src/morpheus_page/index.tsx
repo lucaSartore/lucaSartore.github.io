@@ -5,6 +5,7 @@ import "./index.css";
 import "../fonts.css";
 import { TypingParagraph, TypingParagraphRef } from "../components/textbox";
 import { useRef } from "react";
+import AnimatedEllipsis from "./animated_text";
 
 function MorpheusPage() {
 	const refRedText = useRef<TypingParagraphRef>(null);
@@ -13,6 +14,9 @@ function MorpheusPage() {
 	return (
 		<>
 			<div id="main_div">
+                <div id = "pick_one_text" className="font-size-huge custom-font">
+                    <AnimatedEllipsis />
+                </div>
 				<div id="img_div">
 					<div
 						id="red_pill_div"

@@ -82,7 +82,11 @@
   fond-size: 1000
 }
 
-
+.custom-font {
+        font-family: "", Courier;
+        font-display: swap;
+        font-weight: 400;
+    }
 
 
 @import url('https://fonts.cdnfonts.com/css/home-video');
@@ -118,7 +122,14 @@
 }
 
 
+#pick_one_text {
+    width: auto;
+    height: 30%;
+    display: grid;
+    place-items: center;
+}
 
-
-
+#pick_one_text > span {
+    width: 280pt
+}
 

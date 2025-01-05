@@ -14,6 +14,11 @@
     font-size: 22pt;
 }
 
+
+.font-size-huge {
+    font-size: 40pt;
+}
+
  .custom-font {
     font-family: "", Courier;
     font-display: swap;
