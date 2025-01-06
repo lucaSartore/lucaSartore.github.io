@@ -51,7 +51,7 @@
 
 #red_pill_div:hover ~ #red_pill_border {
     opacity: 1;
-    z-idnex: 2;
+    z-index: 2;
     transition: opacity 0.6s ease;
     filter: drop-shadow(0 0 10px #FF0000);
 }
@@ -62,7 +62,7 @@
 
 #blue_pill_div:hover ~ #blue_pill_border {
     opacity: 1;
-    z-idnex: 2;
+    z-index: 2;
     transition: opacity 0.6s ease;
     filter: drop-shadow(0 0 10px #0000FF);
 }
@@ -79,7 +79,6 @@
   left:10%;
   z-index: 5;
   color: #FF0000;
-  fond-size: 1000
 }
 
 .custom-font {
@@ -89,7 +88,6 @@
     }
 
 
-@import url('https://fonts.cdnfonts.com/css/home-video');
 
 .red_pill_text_box {
   position:absolute;
@@ -101,7 +99,6 @@
   left:3%;
   z-index: 5;
   color: #D62246;
-  fond-size: 1000
 }
 
 .pixel_font {
@@ -118,7 +115,6 @@
   left:66%;
   z-index: 5;
   color: #57B8FF;
-  fond-size: 1000
 }
 
 
