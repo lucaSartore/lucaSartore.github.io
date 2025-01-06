@@ -30,8 +30,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Navigate to="/home" replace />} />
+				<Route path="/" element={<Navigate to="/pick_one" replace />} />
 				<Route path="/pick_one" element={<MorpheusPage />} />
+				<Route path="/blue_pill" element={<MorpheusPage />} />
+				<Route path="/red_pill" element={<MorpheusPage />} />
 				<Route path="*" element={<h1>404 page </h1>} />
 			</Routes>
 		</BrowserRouter>

@@ -6,10 +6,13 @@ import "../fonts.css";
 import { TypingParagraph, TypingParagraphRef } from "../components/textbox";
 import { useRef } from "react";
 import AnimatedEllipsis from "./animated_text";
+import {  useNavigate } from "react-router";
+
 
 function MorpheusPage() {
 	const refRedText = useRef<TypingParagraphRef>(null);
 	const refBlueText = useRef<TypingParagraphRef>(null);
+    const navigate = useNavigate()
 
 	return (
 		<>
@@ -22,11 +25,13 @@ function MorpheusPage() {
 						id="red_pill_div"
 						onMouseEnter={() => refRedText.current?.start()}
 						onMouseLeave={() => refRedText.current?.stop()}
+                        onClick={() => navigate("/red_pill")}
 					></div>
 					<div
 						id="blue_pill_div"
 						onMouseEnter={() => refBlueText.current?.start()}
 						onMouseLeave={() => refBlueText.current?.stop()}
+                        onClick={() => navigate("/blue_pill")}
 					></div>
 					<img className="image" src={image} />
 					<img className="image" id="blue_pill_border" src={blue_pill_border} />
