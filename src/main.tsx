@@ -2,9 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
 
+
 import "./index.css";
 
 import MorpheusPage from "./morpheus_page";
+import PdaPage from "./components/pda";
 
 // just a trick to make single page app work in github-pages
 // credit: https://github.com/rafgraph/spa-github-pages
@@ -32,7 +34,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 			<Routes>
 				<Route path="/" element={<Navigate to="/pick_one" replace />} />
 				<Route path="/pick_one" element={<MorpheusPage />} />
-				<Route path="/blue_pill" element={<MorpheusPage />} />
+				<Route path="/blue_pill" element={<PdaPage />} />
 				<Route path="/red_pill" element={<MorpheusPage />} />
 				<Route path="*" element={<h1>404 page </h1>} />
 			</Routes>
