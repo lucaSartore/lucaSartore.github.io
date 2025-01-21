@@ -6,8 +6,7 @@ html, body {
     overflow: hidden;
 }
 
-/* Container div takes full viewport */
-.pda-page-main-div {
+#pda-page-main-div {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -15,13 +14,44 @@ html, body {
     align-items: center;
 }
 
-/* Image will maintain aspect ratio and be contained within viewport */
 .pda-class {
     max-width: 97vw;
     max-height: 97vh;
-    width: auto;
-    height: auto;
     object-fit: contain;
+    z-index: 1;
+}
+
+#image-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: slide 1s forwards;
+    animation-delay: 0.1s;
 }
 
 
+@keyframes slide {
+    0% {
+        position: absolute;
+        top: 100vh;
+        left: 0px;
+    }
+    100% {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+}
+
+
+#desk-img {
+    min-width: 100vw;
+    min-height: 100vw;
+    z-index: -1;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
