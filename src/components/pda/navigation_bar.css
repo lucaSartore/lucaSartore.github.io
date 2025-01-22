@@ -1,0 +1,30 @@
+.navigation-bar {
+    width: auto;
+
+    margin-left: auto;
+    margin-right: auto;
+    height: 7%;
+    margin-top: 1%;
+    /*border-radius: 10px;*/
+    border-radius: 1.75% / 25%;
+    border-color: var(--decoration-color);
+    border-style: solid;
+    
+    display: flex;
+    align-items: center;   
+
+    background-color: var(--background-dark);
+}
+
+.navigation-bar > .icon {
+    height: 90%;
+    color: var(--decoration-color);
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.navigation-bar > .icon:hover {
+    background-color: var(--background-light);
+}

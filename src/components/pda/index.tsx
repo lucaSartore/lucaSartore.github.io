@@ -4,6 +4,7 @@ import "./index.css"
 import "./themes.css"
 import { forwardRef, PropsWithChildren, useImperativeHandle, useRef } from "react";
 import { ThemeProvider } from "./theme_provider";
+import { NavigationBar } from "./navigation_bar";
 
 function PdaPage(props: PropsWithChildren) {
     return (
@@ -46,6 +47,7 @@ const PdaWrapper = forwardRef((props: PropsWithChildren, ref) => {
                 </div>
 
                 <div className="pda-screen-top themed-component">
+                    <NavigationBar/>
                     <ThemeProvider>
                         {props.children}
                     </ThemeProvider>

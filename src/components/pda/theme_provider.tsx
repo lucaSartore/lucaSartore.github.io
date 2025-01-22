@@ -1,4 +1,4 @@
-import  { createContext, useContext, useState, useEffect, PropsWithChildren} from 'react';
+import  { createContext, useState, useEffect, PropsWithChildren} from 'react';
 
 type Theme = "one-dark" | "paper-like" | "hacker";
 function isTheme(value: any): value is Theme {
