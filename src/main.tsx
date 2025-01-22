@@ -6,7 +6,6 @@ import BluePillPage from "./info_pages/blue_pill_page";
 import "./index.css";
 
 import MorpheusPage from "./morpheus_page";
-import PdaPage from "./components/pda";
 
 // just a trick to make single page app work in github-pages
 // credit: https://github.com/rafgraph/spa-github-pages
