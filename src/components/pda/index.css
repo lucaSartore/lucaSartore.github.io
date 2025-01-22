@@ -49,8 +49,10 @@ html, body {
 .pda-img{
     max-width: 97vw;
     max-height: 97vh;
-    /*object-fit: contain;*/
     z-index: 4;
+
+    pointer-events: none;
+    user-select: none;
 }
 
 .pda-screen {
