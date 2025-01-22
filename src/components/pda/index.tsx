@@ -1,7 +1,7 @@
 import pda_img from "../../assets/pda.png";
 import desk_img from "../../assets/desk_3.jpg";
-import React, { useEffect, useState, useRef } from "react";
 import "./index.css"
+import { forwardRef, PropsWithChildren, useImperativeHandle, useRef } from "react";
 
 
 function PdaPage(){
@@ -9,7 +9,10 @@ function PdaPage(){
 		<>
             <div id="pda-page-main-div">
                 <div id="pda-container">
-                    <PdaWrapper/>               
+                    <PdaWrapper >               
+                        <h1> hello </h1>
+                        <a> this is some cool text inside my pda </a>
+                    </PdaWrapper>
                 </div>
                 <img src={desk_img} id="desk-img"/>
             </div>
@@ -17,52 +20,35 @@ function PdaPage(){
     )
 }
 
-function PdaWrapper() {
-    const [overlayStyle, setOverlayStyle] = useState({});
-    const imageRef = useRef<HTMLImageElement>(null);
 
-    useEffect(() => {
-        const updateOverlay = () => {
-            const image = imageRef.current;
-            if (!image) return;
+const PdaWrapper = forwardRef((props: PropsWithChildren, ref) => {
+    const refPdaWrapper = useRef(null)
 
-            const imageRect = image.getBoundingClientRect();
-            const imageWidth = imageRect.width;
-            const imageHeight = imageRect.height;
-
-            const topLeftX = imageWidth * 0.264;
-            const topLeftY = imageHeight * 0.115;
-            const bottomRightX = imageWidth * 0.975;
-            const bottomRightY = imageHeight * 0.963;
-
-            const overlayWidth = bottomRightX - topLeftX;
-            const overlayHeight = bottomRightY - topLeftY;
-
-            setOverlayStyle({
-                width: `${overlayWidth}px`,
-                height: `${overlayHeight}px`,
-                left: `${imageRect.left + topLeftX}px`,
-                top: `${imageRect.top + topLeftY}px`,
-            });
-        };
-
-        updateOverlay();
-        window.addEventListener("resize", updateOverlay);
-
-        return () => window.removeEventListener("resize", updateOverlay);
-    }, []);
+      useImperativeHandle(ref, () => ({
+        toggleFullscreen: () => {
+            console.log("full screen");
+        }
+      }));
 
     return (
         <>
-            <img
-                ref={imageRef}
-                src={pda_img}
-                className="pda-class"
-                alt="PDA"
-            />
-            <div className="pda-screen" style={overlayStyle}></div>
+            <div 
+                className="pda-main-div"
+                ref={refPdaWrapper}
+                {...props}
+            >
+                <img
+                    //ref={imageRef}
+                    src={pda_img}
+                    className="pda-img"
+                    alt="PDA"
+                />
+                <div className="pda-screen" >
+                    {props.children}
+                </div>
+            </div>
         </>
     );
-}
+})
 
 export default PdaPage;

@@ -46,7 +46,7 @@ html, body {
     height: 100%;
 }
 
-.pda-class {
+.pda-img{
     max-width: 97vw;
     max-height: 97vh;
     object-fit: contain;
@@ -55,15 +55,16 @@ html, body {
 
 .pda-screen {
     position: absolute;
-    z-index: 3; /* Ensure it's above the image */
-    /* Calculate the width and height based on the desired corners */
-    /**/
+    z-index: 3;
+    left: 26.4%;
+    top: 11.5%;
+    width: 71.1%;
+    height: 84.2%;
     border-color: red; 
     border-style: dotted;
-    /*z-index: 1;*/
-    /**/
-    /*aspect-ratio: 1/2;*/
-    /*/*object-fit: contain;*/*/
-    /*max-width: 97vw;*/
-    /*max-height: 97vh;*/
+}
+
+
+.pda-main-div {
+    position: relative;
 }
