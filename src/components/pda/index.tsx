@@ -2,7 +2,7 @@ import pda_img from "../../assets/pda.png";
 import desk_img from "../../assets/desk_3.jpg";
 import "./index.css"
 import "./themes.css"
-import { forwardRef, PropsWithChildren, ReactNode, useImperativeHandle, useRef } from "react";
+import { forwardRef, PropsWithChildren, ReactNode, useImperativeHandle, useRef, useState } from "react";
 import { ThemeProvider } from "./theme_provider";
 import { NavigationBar } from "./navigation_bar";
 import { NavigationBarParams } from "./navigation_bar";
@@ -30,6 +30,8 @@ function PdaPage(props: PdaPageProps) {
 
 const PdaWrapper = forwardRef((props: PdaPageProps, ref) => {
     const refPdaWrapper = useRef(null)
+    
+    const [fullScreen,setFullScreen] = useState<boolean>(false)
 
     useImperativeHandle(ref, () => ({
         toggleFullscreen: () => {
@@ -40,7 +42,7 @@ const PdaWrapper = forwardRef((props: PdaPageProps, ref) => {
     return (
         <>
             <div
-                className="pda-main-div"
+                className="pda-main-div "
                 ref={refPdaWrapper}
                 {...props}
             >
@@ -49,15 +51,15 @@ const PdaWrapper = forwardRef((props: PdaPageProps, ref) => {
                     className="pda-img"
                     alt="PDA"
                 />
-                <div className="pda-screen themed-component" >
+                <div className={fullScreen? "pda-screen-full-screen" : "pda-screen"} >
                 </div>
 
-                <div className="pda-screen-top themed-component">
+                <div className={fullScreen? "pda-screen-top-full-screen" : "pda-screen-top"}>
                     <ThemeProvider>
                         <NavigationBar
                             backButtonCallback = {props.navigationBarParams.backButtonCallback}
-                            fullScreenButtonCallback = {props.navigationBarParams.fullScreenButtonCallback}
-                            exitFullScreenButtonCallback = {props.navigationBarParams.exitFullScreenButtonCallback}
+                            fullScreenButtonCallback = {() => setFullScreen(true)}
+                            exitFullScreenButtonCallback = {() => setFullScreen(false)}
                             exitButtonCallback = {props.navigationBarParams.exitButtonCallback}
                         />
                         {props.children}
