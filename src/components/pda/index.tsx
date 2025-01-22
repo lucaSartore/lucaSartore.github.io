@@ -47,8 +47,8 @@ const PdaWrapper = forwardRef((props: PropsWithChildren, ref) => {
                 </div>
 
                 <div className="pda-screen-top themed-component">
-                    <NavigationBar/>
                     <ThemeProvider>
+                        <NavigationBar/>
                         {props.children}
                     </ThemeProvider>
                 </div>
@@ -56,5 +56,13 @@ const PdaWrapper = forwardRef((props: PropsWithChildren, ref) => {
         </>
     );
 })
+
+export function isPageDoneWithSliding() : boolean{
+    const element = document.getElementById("pda-container");
+    if (element == null){
+        return false;
+    }
+    return element.getBoundingClientRect().y == 0;
+}
 
 export default PdaPage;
