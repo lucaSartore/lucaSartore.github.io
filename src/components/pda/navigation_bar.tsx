@@ -7,7 +7,7 @@ import "../../fonts.css"
 
 export function NavigationBar(){
     const location = useLocation();
-    const pathName = location.pathname.slice(1).replace("/", " > ") + "foo> foo> foo> foo> ";
+    const pathName = location.pathname.slice(1).replace("/", " > ");
 
     return (
         <>
