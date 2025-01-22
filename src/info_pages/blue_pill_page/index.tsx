@@ -45,7 +45,8 @@ export default function BluePillPage() {
             <PdaPage
                 navigationBarParams={{
                     // go back only if we are not already at the root page
-                    backButtonCallback: useLocation().pathname == "/blue_pill"? () => {} : () => navigate(-1)
+                    backButtonCallback: useLocation().pathname == "/blue_pill"? () => {} : () => navigate(-1),
+                    exitButtonCallback: () => navigate("/")
                 }}
             >
                 <Routes>
