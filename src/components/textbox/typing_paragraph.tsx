@@ -2,6 +2,7 @@ import React, {
 	useRef,
 	useImperativeHandle,
 	forwardRef,
+    useEffect,
 } from "react";
 import  { TypingTextProps, TypingTextRef, TypingText } from "./typing_text";
 
@@ -12,8 +13,10 @@ const TYPING_VOLUME = 0.2;
 
 export type TypingParagraphProps = {
     items: Array<TypingTextProps | JSX.Element>
-    className: string | undefined
-    typingTime: number | undefined
+    className?: string
+    typingTime?: number
+    defaultStatus?: "TYPING" | "DELETING"
+    startTypingTimeout?: number
 }
 
 export type TypingParagraphRef = {
@@ -27,13 +30,18 @@ export const TypingParagraph = forwardRef((props: TypingParagraphProps, ref: Rea
     const className = props.className || "";
     const items = props.items;
     const typingTime = props.typingTime || DEFAULT_TYPING_TIME_MS
+    const defaultStatus = props.defaultStatus || "DELETING"
+    const startTypingTimeout = props.startTypingTimeout || 0
 
 	const audioRef: React.MutableRefObject<HTMLAudioElement | null> = useRef(null);
 
     
     // creating all sub objects
-    let items_refs: Array<React.RefObject<TypingTextRef>> = []
-    let items_html: Array<JSX.Element> = []
+    let itemsRef: Array<
+        {kind: "tt"; value: React.RefObject<TypingTextRef>} | 
+        {kind: "div"; value: React.RefObject<HTMLDivElement>}
+    > = [];
+    let itemsHtml: Array<JSX.Element> = []
     
     let numLetters = 0;
 
@@ -41,13 +49,26 @@ export const TypingParagraph = forwardRef((props: TypingParagraphProps, ref: Rea
         if ("className" in item && "text" in item){
             const ref = useRef<TypingTextRef>(null);
             numLetters += item.text?.length || 0;
-            items_html.push(
+            itemsHtml.push(
                 <TypingText ref={ref} className={item.className} text = {item.text} key={i}/>
             )
-            items_refs.push(ref);
+            itemsRef.push({
+                kind: "tt",
+                value: ref
+            });
         }else{
-            item.key = i.toString();
-            items_html.push(item)
+            //item.key = i.toString();
+            const ref = useRef<HTMLDivElement>(null);
+            numLetters += 1
+            itemsHtml.push(
+                <div key={i} hidden={true} ref={ref}>
+                    {item}
+                </div>
+            )
+            itemsRef.push({
+                kind: "div",
+                value: ref
+            });
         }
     });
     
@@ -85,7 +106,7 @@ export const TypingParagraph = forwardRef((props: TypingParagraphProps, ref: Rea
 
 
 	const isUpdaterRunning = useRef(false);
-	const status = useRef<"TYPING" | "DELETING">("DELETING"); 
+	const status = useRef<"TYPING" | "DELETING">(defaultStatus); 
     const innerTextIndex = useRef(0);
 
      
@@ -93,18 +114,28 @@ export const TypingParagraph = forwardRef((props: TypingParagraphProps, ref: Rea
         let has_finish_updates = false;
         if (status.current == "TYPING"){
             for (let i=0; i<scalingFactor; i++){
-                //@ts-expect-error
-                has_finish_updates = items_refs[innerTextIndex.current].current.forward();
+                const item = itemsRef[innerTextIndex.current]!;
+                if (item.kind == "tt"){
+                    has_finish_updates = item.value.current!.forward();
+                }else{
+                    item.value.current!.hidden=false;
+                    has_finish_updates = true;
+                }
             }
         }else{
             for (let i=0; i<scalingFactor; i++){
-                //@ts-expect-error
-                has_finish_updates = items_refs[innerTextIndex.current].current.backword();
+                const item = itemsRef[innerTextIndex.current]!;
+                if (item.kind == "tt"){
+                    has_finish_updates = item.value.current!.backword();
+                }else{
+                    item.value.current!.hidden=true;
+                    has_finish_updates = true;
+                }
             }
         }
 
         if (has_finish_updates && status.current == "DELETING" && innerTextIndex.current == 0 ||
-            has_finish_updates && status.current == "TYPING" && innerTextIndex.current+1 == items_refs.length
+            has_finish_updates && status.current == "TYPING" && innerTextIndex.current+1 == itemsRef.length
            ){
             stopAudio();
             isUpdaterRunning.current = false;
@@ -142,9 +173,21 @@ export const TypingParagraph = forwardRef((props: TypingParagraphProps, ref: Rea
 		},
 	}));
 
+    useEffect(() => {
+        console.log('Component was constructed!');
+
+        if (status.current == "TYPING"){
+            setTimeout(() => startTextUpdater(), startTypingTimeout)
+        }
+    
+        return () => {};
+    }, []);
+
+
+
 	return (
 		<div className={`relative ${className}`}>
-            {items_html}
+            {itemsHtml}
 			<audio
 				ref={audioRef}
 				preload="auto"
