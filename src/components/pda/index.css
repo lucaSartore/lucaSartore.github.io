@@ -38,7 +38,7 @@ html, body {
 
 
 #desk-img {
-    z-index: -1;
+    z-index: -2;
     position: absolute;
     left: 0px;
     top: 0px;
@@ -49,21 +49,29 @@ html, body {
 .pda-img{
     max-width: 97vw;
     max-height: 97vh;
-    object-fit: contain;
-    z-index: 2;
+    /*object-fit: contain;*/
+    z-index: 4;
 }
 
 .pda-screen {
     position: absolute;
-    z-index: 3;
+    z-index: -1;
     left: 26.4%;
     top: 11.5%;
-    width: 71.1%;
-    height: 84.2%;
-    border-color: red; 
-    border-style: dotted;
+    width: 71.3%;
+    height: 84.6%;
+    overflow: auto;
 }
 
+.pda-screen-top {
+    position: absolute;
+    z-index: 5;
+    left: 29.4%;
+    top: 11.9%;
+    width: 65.3%;
+    height: 84.1%;
+    overflow: auto;
+}
 
 .pda-main-div {
     position: relative;

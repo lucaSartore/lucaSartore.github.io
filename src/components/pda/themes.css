@@ -1,0 +1,74 @@
+:root {
+  --background: #000000;
+  --background-light: #000000;
+  --background-dark: #000000;
+
+  --title-color: #000000;
+  --subtitle-color: #000000;
+
+  --decoration-color: #000000;
+  --secondary-decoration-color: #000000;
+
+  --text-color: #000000;
+  --secondary-text-color: #000000;
+}
+
+[data-theme='one-dark'] {
+  --background: #1f2329;
+  --background-light: #282c34;
+  --background-dark: #181b20;
+
+  --title-color: #dc6069;
+  --subtitle-color: #e1b86f;
+
+  --decoration-color: #57a5ed;
+  --secondary-decoration-color: #bf6dd8;
+
+  --text-color: #8dbb6e;
+  --secondary-text-color: #a1a9b7;
+}
+
+[data-theme='hacker'] {
+  --background: #111111;
+  --background-light: #222222;
+  --background-dark: #000000;
+
+  --title-color: #149414;
+  --subtitle-color: #149414;
+
+  --decoration-color: #149414;
+  --secondary-decoration-color: #149414;
+
+  --text-color: #149414;
+  --secondary-text-color: #149414;
+}
+
+
+.themed-component > h1 {
+    color: var(--secondary-decoration-color);
+}
+
+.themed-component {
+    background-color: var(--background);
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  /*background-color: var(--decoration-color)*/
+  /*background-color: var(--secondary-decoration-color);*/
+  background-color: var(--decoration-color);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-decoration-color);
+}
