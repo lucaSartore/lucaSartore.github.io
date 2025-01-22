@@ -34,8 +34,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 			<Routes>
 				<Route path="/" element={<Navigate to="/pick_one" replace />} />
 				<Route path="/pick_one" element={<MorpheusPage />} />
-				<Route path="/blue_pill" element={<BluePillPage />} />
-				<Route path="/red_pill" element={<MorpheusPage />} />
+				<Route path="/blue_pill/*" element={<BluePillPage />} />
+				<Route path="/red_pill/*" element={<MorpheusPage />} />
 				<Route path="*" element={<h1>404 page </h1>} />
 			</Routes>
 		</BrowserRouter>
