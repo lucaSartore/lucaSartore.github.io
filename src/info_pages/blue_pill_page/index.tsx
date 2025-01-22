@@ -1,20 +1,24 @@
 import PdaPage from "../../components/pda";
 import { TypingParagraph } from "../../components/textbox";
 import "../../components/pda/themes.css"
-
+import { Route, Routes, useNavigate } from "react-router";
+import { isPageDoneWithSliding } from "../../components/pda";
+var count = 0;
 
 export default function BluePillPage() {
 
-    return (
-        <>
-            <PdaPage>
-					<TypingParagraph
+    const navigate = useNavigate()
+
+    const paragraph = <TypingParagraph
+                        id="main-typing-paragraph"
                         typingTime={1500}
                         defaultStatus="TYPING"
-                        startTypingTimeout={1000}
+                        startTypingTimeout={isPageDoneWithSliding() ? 0 : 1000}
 						items={[
                             <br/>,
                             <br/>,
+                            <a onClick={() => navigate("./foo")}>foo</a>,
+                            <a onClick={() => console.log("hello bar")}>bar</a>,
                             <br/>,
                             <hr/>,
 							{
@@ -35,10 +39,20 @@ export default function BluePillPage() {
 								text: `Remember that if you change your mind you can always refresh the website and choose the blue pill.`, },
 						]}
 					/>
-                
+
+
+    count += 1;
+
+
+    return (
+        <>
+            <PdaPage>
+                <Routes>
+                    <Route path="/" element={paragraph} />
+                    <Route path="/foo" element={<h1>foo</h1>} />
+                    <Route path="/bar" element={<h1>bar</h1>} />
+                </Routes>
             </PdaPage>
         </>
     )
-
-
 }
