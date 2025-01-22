@@ -44,7 +44,23 @@
 }
 
 
-.themed-component > h1 {
+.title-color {
+    color: var(--title-color);
+}
+
+.subtitle-color {
+    color: var(--subtitle-color);
+}
+.text-color {
+    color: var(--text-color);
+}
+.secondary-text-color {
+    color: var(--secondary-text-color);
+}
+.decoration-color {
+    color: var(--decoration-color);
+}
+.secondary-decoration-color {
     color: var(--secondary-decoration-color);
 }
 

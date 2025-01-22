@@ -5,100 +5,13 @@ import "./themes.css"
 import { forwardRef, PropsWithChildren, useImperativeHandle, useRef } from "react";
 import { ThemeProvider } from "./theme_provider";
 
-function PdaPage() {
+function PdaPage(props: PropsWithChildren) {
     return (
         <>
             <div id="pda-page-main-div">
                 <div id="pda-container">
                     <PdaWrapper >
-                        <h1> hello </h1>
-                        <a> this is some cool text inside my pda </a>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        <h1> hello </h1>
-                        
+                        {props.children}
                     </PdaWrapper>
                 </div>
                 <img src={desk_img} id="desk-img" />

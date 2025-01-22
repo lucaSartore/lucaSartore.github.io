@@ -33,6 +33,7 @@ export const ThemeProvider = (props: PropsWithChildren) => {
     setTheme(newTheme);
   };
 
+  // text
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {props.children}
