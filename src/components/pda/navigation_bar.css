@@ -7,7 +7,9 @@
     border-radius: 1.75% / 25%;
     border-color: var(--decoration-color);
     border-style: solid;
+
     display: flex;
+
     align-items: center;   
     background-color: var(--background-dark);
 
@@ -24,7 +26,17 @@
     }
 }
 
-.navigation-bar > .icon {
+.navigation-bar > .hide-icon-div {
+    height: 100%;
+    width: auto;
+    align-items: center;   
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 0;
+    margin-left: 0;
+}
+.navigation-bar .icon {
     height: 90%;
     color: var(--decoration-color);
     margin-top: auto;
@@ -33,7 +45,12 @@
     margin-left: 0;
 }
 
-.navigation-bar > .icon:hover {
+
+/*.navigation-bar > div > .icon {*/
+/*    height: */
+/*}*/
+
+.navigation-bar .icon:hover {
     background-color: var(--background-light);
 }
 

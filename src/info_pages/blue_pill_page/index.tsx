@@ -1,16 +1,15 @@
 import PdaPage from "../../components/pda";
 import { TypingParagraph } from "../../components/textbox";
 import "../../components/pda/themes.css"
-import { Route, Routes, useNavigate } from "react-router";
+import { Route, Routes, useLocation, useNavigate } from "react-router";
 import { isPageDoneWithSliding } from "../../components/pda";
-var count = 0;
 
 export default function BluePillPage() {
 
     const navigate = useNavigate()
 
+
     const paragraph = <TypingParagraph
-                        id="main-typing-paragraph"
                         typingTime={1500}
                         defaultStatus="TYPING"
                         startTypingTimeout={isPageDoneWithSliding() ? 0 : 1000}
@@ -41,12 +40,14 @@ export default function BluePillPage() {
 					/>
 
 
-    count += 1;
-
-
     return (
         <>
-            <PdaPage>
+            <PdaPage
+                navigationBarParams={{
+                    // go back only if we are not already at the root page
+                    backButtonCallback: useLocation().pathname == "/blue_pill"? () => {} : () => navigate(-1)
+                }}
+            >
                 <Routes>
                     <Route path="/" element={paragraph} />
                     <Route path="/foo" element={<h1>foo</h1>} />

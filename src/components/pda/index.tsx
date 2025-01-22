@@ -2,16 +2,22 @@ import pda_img from "../../assets/pda.png";
 import desk_img from "../../assets/desk_3.jpg";
 import "./index.css"
 import "./themes.css"
-import { forwardRef, PropsWithChildren, useImperativeHandle, useRef } from "react";
+import { forwardRef, PropsWithChildren, ReactNode, useImperativeHandle, useRef } from "react";
 import { ThemeProvider } from "./theme_provider";
 import { NavigationBar } from "./navigation_bar";
+import { NavigationBarParams } from "./navigation_bar";
 
-function PdaPage(props: PropsWithChildren) {
+type PdaPageProps = {
+    children: ReactNode
+    navigationBarParams: NavigationBarParams
+}
+
+function PdaPage(props: PdaPageProps) {
     return (
         <>
             <div id="pda-page-main-div">
                 <div id="pda-container">
-                    <PdaWrapper >
+                    <PdaWrapper navigationBarParams={props.navigationBarParams}>
                         {props.children}
                     </PdaWrapper>
                 </div>
@@ -22,7 +28,7 @@ function PdaPage(props: PropsWithChildren) {
 }
 
 
-const PdaWrapper = forwardRef((props: PropsWithChildren, ref) => {
+const PdaWrapper = forwardRef((props: PdaPageProps, ref) => {
     const refPdaWrapper = useRef(null)
 
     useImperativeHandle(ref, () => ({
@@ -48,7 +54,12 @@ const PdaWrapper = forwardRef((props: PropsWithChildren, ref) => {
 
                 <div className="pda-screen-top themed-component">
                     <ThemeProvider>
-                        <NavigationBar/>
+                        <NavigationBar
+                            backButtonCallback = {props.navigationBarParams.backButtonCallback}
+                            fullScreenButtonCallback = {props.navigationBarParams.fullScreenButtonCallback}
+                            exitFullScreenButtonCallback = {props.navigationBarParams.exitFullScreenButtonCallback}
+                            exitButtonCallback = {props.navigationBarParams.exitButtonCallback}
+                        />
                         {props.children}
                     </ThemeProvider>
                 </div>
