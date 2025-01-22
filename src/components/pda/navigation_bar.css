@@ -1,19 +1,27 @@
 .navigation-bar {
     width: auto;
-
     margin-left: auto;
     margin-right: auto;
     height: 7%;
     margin-top: 1%;
-    /*border-radius: 10px;*/
     border-radius: 1.75% / 25%;
     border-color: var(--decoration-color);
     border-style: solid;
-    
     display: flex;
     align-items: center;   
-
     background-color: var(--background-dark);
+
+    opacity: 0;
+    animation: turn-on 1s forwards;
+    animation-delay: 1s;
+    overflow: hidden;
+}
+
+
+@keyframes turn-on {
+    100% {
+        opacity: 10;
+    }
 }
 
 .navigation-bar > .icon {
@@ -27,4 +35,13 @@
 
 .navigation-bar > .icon:hover {
     background-color: var(--background-light);
+}
+
+
+.url-value {
+    color: var(--decoration-color);
+    font-size: 100%;
+    margin-left: 2%;
+    line-height: 1;
+    overflow: hidden;
 }
