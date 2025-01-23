@@ -14,8 +14,9 @@
     background-color: var(--background-dark);
 
     opacity: 0;
+
     animation: turn-on 1s forwards;
-    animation-delay: 1s;
+    animation-delay: var(--total-slide-duration);
     overflow: hidden;
 }
 

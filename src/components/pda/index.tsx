@@ -5,6 +5,7 @@ import "./themes.css"
 import { forwardRef, ReactNode, useImperativeHandle, useRef, useState } from "react";
 import { NavigationBar } from "./navigation_bar";
 import { NavigationBarParams } from "./navigation_bar";
+import { isMobileMode } from "../settings_provider/mobile_settings_provider";
 
 type PdaPageProps = {
     children: ReactNode
@@ -30,7 +31,7 @@ function PdaPage(props: PdaPageProps) {
 const PdaWrapper = forwardRef((props: PdaPageProps, ref) => {
     const refPdaWrapper = useRef(null)
     
-    const [fullScreen,setFullScreen] = useState<boolean>(false)
+    const [fullScreen,setFullScreen] = useState<boolean>(isMobileMode())
 
     useImperativeHandle(ref, () => ({
         toggleFullscreen: () => {

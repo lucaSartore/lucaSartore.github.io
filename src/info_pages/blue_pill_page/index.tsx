@@ -8,36 +8,42 @@ export default function BluePillPage() {
 
     const navigate = useNavigate()
 
+    
+    const delay1 = window.getComputedStyle(document.body).getPropertyValue('--slide-delay').toString().replace("s","")
+    const delay2 = window.getComputedStyle(document.body).getPropertyValue('--slide-duration').toString().replace("s","")
+    const totalDelay = (parseFloat(delay1) + parseFloat(delay2)) * 1000;
+
+    console.log(totalDelay)
 
     const paragraph = <TypingParagraph
-                        typingTime={1500}
-                        defaultStatus="TYPING"
-                        startTypingTimeout={isPageDoneWithSliding() ? 0 : 1000}
-						items={[
-                            <br/>,
-                            <br/>,
-                            <a onClick={() => navigate("./foo")}>foo</a>,
-                            <a onClick={() => console.log("hello bar")}>bar</a>,
-                            <br/>,
-                            <hr/>,
-							{
-								className: "font-size-medium custom-font title-color",
-								text: "Let’s have some fun!",
-							},
-							{
-								className: "font-size-small custom-font",
-								text: `Explore my personal “Website-Game”...`,
-							},
-                            <hr/>,
-							{
-								className: "font-size-small custom-font",
-								text: `You have been tasked with retrieving some extremely important data, to recover them you will need to explore an abandoned city full of killer robots. `,
-							},
-							{
-								className: "font-size-small custom-font",
-								text: `Remember that if you change your mind you can always refresh the website and choose the blue pill.`, },
-						]}
-					/>
+        typingTime={1500}
+        defaultStatus="TYPING"
+        startTypingTimeout={isPageDoneWithSliding() ? 0 : totalDelay}
+        items={[
+            <br/>,
+            <br/>,
+            <a onClick={() => navigate("./foo")}>foo</a>,
+            <a onClick={() => console.log("hello bar")}>bar</a>,
+            <br/>,
+            <hr/>,
+            {
+                className: "font-size-medium custom-font title-color",
+                text: "Let’s have some fun!",
+            },
+            {
+                className: "font-size-small custom-font",
+                text: `Explore my personal “Website-Game”...`,
+            },
+            <hr/>,
+            {
+                className: "font-size-small custom-font",
+                text: `You have been tasked with retrieving some extremely important data, to recover them you will need to explore an abandoned city full of killer robots. `,
+            },
+            {
+                className: "font-size-small custom-font",
+                text: `Remember that if you change your mind you can always refresh the website and choose the blue pill.`, },
+        ]}
+    />
 
 
     return (

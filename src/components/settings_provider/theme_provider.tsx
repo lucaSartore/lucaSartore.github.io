@@ -25,6 +25,7 @@ export const ThemeProvider = (props: PropsWithChildren) => {
     return "one-dark"
   });
 
+  document.documentElement.setAttribute('data-theme', theme);
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);

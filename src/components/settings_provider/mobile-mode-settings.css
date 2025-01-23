@@ -2,15 +2,18 @@
 :root {
     --slide-delay: 0.1s;
     --slide-duration: 1s;
+    --total-slide-duration: calc(var(--slide-delay) + var(--slide-duration));
 }
 
 [mobile-mode='false'] {
     --slide-delay: 0.1s;
     --slide-duration: 1s;
+    --total-slide-duration: calc(var(--slide-delay) + var(--slide-duration));
 }
 
 
 [mobile-mode='true'] {
     --slide-delay: 0s;
     --slide-duration: 0s;
+    --total-slide-duration: calc(var(--slide-delay) + var(--slide-duration));
 }
