@@ -5,6 +5,7 @@ import React, {
     useEffect,
 } from "react";
 import  { TypingTextProps, TypingTextRef, TypingText } from "./typing_text";
+import audio from "../../assets/keyboard_sound.mp3";
 
 const DEFAULT_TYPING_TIME_MS = 1200;
 const TYPING_VOLUME = 0.2;
@@ -184,6 +185,7 @@ export const TypingParagraph = forwardRef((props: TypingParagraphProps, ref: Rea
     }, []);
 
 
+	//src="./src/assets/keyboard_sound.mp3"
 
 	return (
 		<div className={`relative ${className}`}>
@@ -191,7 +193,7 @@ export const TypingParagraph = forwardRef((props: TypingParagraphProps, ref: Rea
 			<audio
 				ref={audioRef}
 				preload="auto"
-				src="./src/assets/keyboard_sound.mp3"
+				src={audio}
 				className="hidden"
 				loop={true}
 			/>
