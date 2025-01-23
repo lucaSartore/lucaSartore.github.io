@@ -20,8 +20,10 @@ const MobileWarningPage: React.FC = () => {
         </h1>
         
         <p className="warning-description">
-          Some features of our site may not work optimally on mobile devices. 
-          We recommend using a desktop or laptop for the full experience.
+            This website is special! It has a few features (like a built in game) that requires a keyboard
+            and mouse to be enjoyed. Therefore I recommend that you navigate it with a pc.
+            However if you are in a hurry and you need to check it from mobile
+            I made a mobile friendly mode that you can enable.
         </p>
         
         <div className="warning-buttons">
@@ -33,7 +35,7 @@ const MobileWarningPage: React.FC = () => {
             }}
           >
             <Icon path={mdiLaptop} size={1} />
-            Continue with Full Site
+            Use desktop site
           </button>
           
           <button 
@@ -44,7 +46,7 @@ const MobileWarningPage: React.FC = () => {
             }}
           >
             <Icon path={mdiCellphone} size={1} />
-            Continue to Mobile Site
+            Enable mobile mode
           </button>
         </div>
       </div>
