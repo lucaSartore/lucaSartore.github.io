@@ -17,8 +17,8 @@ function PdaPage(props: PdaPageProps) {
         <>
             <div id="pda-page-main-div">
                 <div id="pda-container">
-                    <PdaWrapper navigationBarParams={props.navigationBarParams}>
-                        {props.children}
+                    <PdaWrapper {...props}>
+                    
                     </PdaWrapper>
                 </div>
                 <img src={desk_img} id="desk-img" />
@@ -28,16 +28,10 @@ function PdaPage(props: PdaPageProps) {
 }
 
 
-const PdaWrapper = forwardRef((props: PdaPageProps, ref) => {
+function PdaWrapper(props: PdaPageProps) {
     const refPdaWrapper = useRef(null)
     
     const [fullScreen,setFullScreen] = useState<boolean>(isMobileMode())
-
-    useImperativeHandle(ref, () => ({
-        toggleFullscreen: () => {
-            setFullScreen(!fullScreen)
-        }
-    }));
 
     return (
         <>
@@ -66,7 +60,7 @@ const PdaWrapper = forwardRef((props: PdaPageProps, ref) => {
             </div>
         </>
     );
-})
+}
 
 export function isPageDoneWithSliding() : boolean{
     const element = document.getElementById("pda-container");
