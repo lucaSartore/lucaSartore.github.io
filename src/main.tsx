@@ -7,7 +7,6 @@ import "./index.css";
 
 import MorpheusPage from "./morpheus_page";
 import MobileWarningPage from "./mobile_warning_page";
-import { isMobileMode } from "./components/settings_provider/mobile_settings_provider";
 import { SettingsProvider } from "./components/settings_provider";
 
 // just a trick to make single page app work in github-pages
@@ -37,7 +36,7 @@ const isMobileUser = (
     navigator.userAgent.match(/Android/i)
 );
 
-const defaultRoute = isMobileMode()? "/blue_pill" : isMobileUser? "/mobile_warning" : "/pick_one";
+const defaultRoute = isMobileUser? "/mobile_warning" : "/pick_one";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
