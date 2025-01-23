@@ -35,7 +35,7 @@ const PdaWrapper = forwardRef((props: PdaPageProps, ref) => {
 
     useImperativeHandle(ref, () => ({
         toggleFullscreen: () => {
-            console.log("full screen");
+            setFullScreen(!fullScreen)
         }
     }));
 

@@ -13,7 +13,6 @@ export default function BluePillPage() {
     const delay2 = window.getComputedStyle(document.body).getPropertyValue('--slide-duration').toString().replace("s","")
     const totalDelay = (parseFloat(delay1) + parseFloat(delay2)) * 1000;
 
-    console.log(totalDelay)
 
     const paragraph = <TypingParagraph
         typingTime={1500}

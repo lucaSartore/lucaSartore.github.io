@@ -175,7 +175,6 @@ export const TypingParagraph = forwardRef((props: TypingParagraphProps, ref: Rea
 	}));
 
     useEffect(() => {
-        console.log('Component was constructed!');
 
         if (status.current == "TYPING"){
             setTimeout(() => startTextUpdater(), startTypingTimeout)

@@ -20,8 +20,6 @@ export const MobileSettingsProvider = (props: PropsWithChildren) => {
     return false
   });
 
-  console.log("build mobile mode: ", mobileMode)
-
   document.documentElement.setAttribute('mobile-mode', mobileMode.toString());
   useEffect(() => {
     document.documentElement.setAttribute('mobile-mode', mobileMode.toString());
