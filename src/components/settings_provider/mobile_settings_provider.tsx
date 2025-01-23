@@ -1,7 +1,7 @@
 import  { createContext, useState, useEffect, PropsWithChildren} from 'react';
 import "./mobile-mode-settings.css"
 
-const ThemeContext = createContext<{
+export const MobileSettingsContext = createContext<{
     mobileMode: boolean,
     setMobileMode: (_: boolean) => void
 }>({
@@ -31,9 +31,9 @@ export const MobileSettingsProvider = (props: PropsWithChildren) => {
 
   // text
   return (
-    <ThemeContext.Provider value={{ mobileMode, setMobileMode }}>
+    <MobileSettingsContext.Provider value={{ mobileMode, setMobileMode }}>
       {props.children}
-    </ThemeContext.Provider>
+    </MobileSettingsContext.Provider>
   );
 };
 
