@@ -2,8 +2,7 @@ import pda_img from "../../assets/pda.png";
 import desk_img from "../../assets/desk_3.jpg";
 import "./index.css"
 import "./themes.css"
-import { forwardRef, PropsWithChildren, ReactNode, useImperativeHandle, useRef, useState } from "react";
-import { ThemeProvider } from "./theme_provider";
+import { forwardRef, ReactNode, useImperativeHandle, useRef, useState } from "react";
 import { NavigationBar } from "./navigation_bar";
 import { NavigationBarParams } from "./navigation_bar";
 
@@ -55,15 +54,13 @@ const PdaWrapper = forwardRef((props: PdaPageProps, ref) => {
                 </div>
 
                 <div className={fullScreen? "pda-screen-top-full-screen" : "pda-screen-top"}>
-                    <ThemeProvider>
-                        <NavigationBar
-                            backButtonCallback = {props.navigationBarParams.backButtonCallback}
-                            fullScreenButtonCallback = {() => setFullScreen(true)}
-                            exitFullScreenButtonCallback = {() => setFullScreen(false)}
-                            exitButtonCallback = {props.navigationBarParams.exitButtonCallback}
-                        />
-                        {props.children}
-                    </ThemeProvider>
+                    <NavigationBar
+                        backButtonCallback = {props.navigationBarParams.backButtonCallback}
+                        fullScreenButtonCallback = {() => setFullScreen(true)}
+                        exitFullScreenButtonCallback = {() => setFullScreen(false)}
+                        exitButtonCallback = {props.navigationBarParams.exitButtonCallback}
+                    />
+                    {props.children}
                 </div>
             </div>
         </>

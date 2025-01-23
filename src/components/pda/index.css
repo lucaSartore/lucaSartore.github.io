@@ -21,8 +21,8 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: slide 1s forwards;
-    animation-delay: 0.1s;
+    animation: slide var(--slide-duration) forwards;
+    animation-delay: var(--slide-delay);
 
     position: relative;
     top: 100vh;

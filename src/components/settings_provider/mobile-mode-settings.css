@@ -1,0 +1,16 @@
+
+:root {
+    --slide-delay: 0.1s;
+    --slide-duration: 1s;
+}
+
+[mobile-mode='false'] {
+    --slide-delay: 0.1s;
+    --slide-duration: 1s;
+}
+
+
+[mobile-mode='true'] {
+    --slide-delay: 0s;
+    --slide-duration: 0s;
+}

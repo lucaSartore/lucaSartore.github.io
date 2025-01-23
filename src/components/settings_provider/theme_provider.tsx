@@ -1,11 +1,12 @@
 import  { createContext, useState, useEffect, PropsWithChildren} from 'react';
+import "./themes_settings.css"
 
 type Theme = "one-dark" | "paper-like" | "hacker";
 function isTheme(value: any): value is Theme {
     return ["one-dark", "paper-like", "hacker"].includes(value);
 }
 
-const ThemeContext = createContext<{
+export const ThemeContext = createContext<{
     theme: Theme,
     toggleTheme: (_: Theme) => void
 }>({

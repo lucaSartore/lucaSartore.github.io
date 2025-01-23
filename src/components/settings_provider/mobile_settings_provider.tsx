@@ -1,0 +1,42 @@
+import  { createContext, useState, useEffect, PropsWithChildren} from 'react';
+import "./mobile-mode-settings.css"
+
+const ThemeContext = createContext<{
+    mobileMode: boolean,
+    setMobileMode: (_: boolean) => void
+}>({
+    mobileMode: false,
+    setMobileMode: _ => {}
+});
+
+
+export const MobileSettingsProvider = (props: PropsWithChildren) => {
+
+  const [mobileMode, setTheme] = useState(() => {
+    var savedMobileMode = localStorage.getItem('mobileMode');
+    if (savedMobileMode != null){
+        return savedMobileMode == "true"
+    }
+    return false
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('mobile-mode', mobileMode.toString());
+    localStorage.setItem('mobileMode', mobileMode.toString());
+  }, [mobileMode]);
+
+  const setMobileMode = (newMode: boolean) => {
+    setTheme(newMode);
+  };
+
+  // text
+  return (
+    <ThemeContext.Provider value={{ mobileMode, setMobileMode }}>
+      {props.children}
+    </ThemeContext.Provider>
+  );
+};
+
+export function isMobileMode(): boolean {
+    return localStorage.getItem('mobileMode') == "true"
+}
