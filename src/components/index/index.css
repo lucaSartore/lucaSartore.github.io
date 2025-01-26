@@ -1,1 +1,35 @@
 
+.underlined {
+    text-decoration: underline;
+}
+
+.url-class {
+}
+
+.index-item {
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+
+.url-class:hover {
+    color: var(--subtitle-color-hover);
+}
+
+.index-separator {
+    background-color: var(--decoration-color);
+    height:2px;
+    border-width:0;
+}
+
+.index-title {
+    margin-top: 20px;
+}
+
+
+.index-description {
+    margin-left: 35px;
+    margin-top: 7px;
+    border-left: 1.5pt solid;
+    padding-left: 10px;
+}

@@ -3,11 +3,12 @@ import { TypingParagraph, TypingTextProps } from "../textbox";
 import "../pda/themes.css"
 import { Route, Routes, useLocation, useNavigate } from "react-router";
 import { GetStartTypingTimeout } from "../../util";
+import "./index.css"
 
 
 export type IndexPageArgs = {
     title: string,
-    subPages: Array<{ title: string, description: string, linkPage: JSX.Element, linkPageUrl: string }>
+    subPages: Array<{ title: string, description: string, linkPage: JSX.Element, linkPageUrl: string, emoji?: string}>
 }
 
 
@@ -17,20 +18,36 @@ export default function IndexPage(params: IndexPageArgs) {
     var itemsList: Array<TypingTextProps | JSX.Element> = [];
 
     itemsList.push({
-        text: params.title,
-        className: "font-size-medium custom-font title-color"
+        text:  params.title,
+        className: "font-size-huge custom-font title-color index-title"
     });
 
+    itemsList.push(
+        <hr className="index-separator"/>
+    )
+
     for (var sp of params.subPages){
+        const text = sp.title;
+        const emoji = sp.emoji;
+        const linkPage = sp.linkPageUrl;
         itemsList.push({
-            text: sp.title,
+            text: text,
             constructorFunc: (x: string) => {
-                return <a onClick={() => navigate(`./${sp.linkPageUrl}`)} >{x}</a>
+                return <div
+                    className= "font-size-medium custom-font subtitle-color url-class index-item"
+                >
+                    {x.length != 0? "> " : ""}
+                    <a
+                        onClick={() => navigate(`./${linkPage}`)}
+                        className= "font-size-medium custom-font subtitle-color url-class underlined"
+                    >{x}</a>
+                    {x.length == text.length? emoji : ""}
+                </div>
             }
         });
         itemsList.push({
             text: sp.description,
-            className: "font-size-medium custom-font title-color"
+            className: "font-size-small custom-font text-color index-description"
         });
 
     }
