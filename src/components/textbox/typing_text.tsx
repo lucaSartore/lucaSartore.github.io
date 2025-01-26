@@ -6,10 +6,15 @@ import React, {
 } from "react";
 
 
-
 export type TypingTextProps = {
-    text: string | undefined;
-    className: string | undefined;
+    text: string ;
+    className?: string;
+    constructorFunc?: (_: string) => JSX.Element
+}
+
+
+export function isTypingTextProps(item: TypingTextProps | JSX.Element): item is TypingTextProps {
+  return (item as TypingTextProps).text !== undefined;
 }
 
 export type TypingTextRef = {
@@ -52,10 +57,15 @@ export const TypingText = forwardRef((props: TypingTextProps, ref: React.Forward
 		},
 	}));
 
-	return (
-		<div className={`relative ${className}`}>
-			{displayedText}
-		</div>
-	);
+    
+    if (props.constructorFunc == undefined){
+        return (
+            <div className={`relative ${className? className : ""}`}>
+                {displayedText}
+            </div>
+        );
+    }else{
+        return props.constructorFunc(displayedText)
+    }
 });
 

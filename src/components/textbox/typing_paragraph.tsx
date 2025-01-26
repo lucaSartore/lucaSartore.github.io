@@ -4,7 +4,7 @@ import React, {
 	forwardRef,
     useEffect,
 } from "react";
-import  { TypingTextProps, TypingTextRef, TypingText } from "./typing_text";
+import  { TypingTextProps, TypingTextRef, TypingText, isTypingTextProps } from "./typing_text";
 import audio from "../../assets/keyboard_sound.mp3";
 
 const DEFAULT_TYPING_TIME_MS = 1200;
@@ -47,18 +47,17 @@ export const TypingParagraph = forwardRef((props: TypingParagraphProps, ref: Rea
     let numLetters = 0;
 
     items.forEach((item, i) => {
-        if ("className" in item && "text" in item){
+        if (isTypingTextProps(item)){
             const ref = useRef<TypingTextRef>(null);
             numLetters += item.text?.length || 0;
             itemsHtml.push(
-                <TypingText ref={ref} className={item.className} text = {item.text} key={i}/>
+                <TypingText ref={ref} {...item} key={i}/>
             )
             itemsRef.push({
                 kind: "tt",
                 value: ref
             });
         }else{
-            //item.key = i.toString();
             const ref = useRef<HTMLDivElement>(null);
             numLetters += 1
             itemsHtml.push(
