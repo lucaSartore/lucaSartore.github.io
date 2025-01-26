@@ -12,6 +12,8 @@
 
   --text-color: #000000;
   --secondary-text-color: #000000;
+
+  --text-selection-color: #000000;
 }
 
 [data-theme='one-dark'] {
@@ -28,6 +30,8 @@
 
   --text-color: #8dbb6e;
   --secondary-text-color: #a1a9b7;
+
+  --text-selection-color: #5c6370;
 }
 
 [data-theme='hacker'] {
@@ -44,6 +48,7 @@
 
   --text-color: #149414;
   --secondary-text-color: #149414;
+  --text-selection-color: red;
 }
 
 
