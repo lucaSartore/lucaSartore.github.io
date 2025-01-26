@@ -62,7 +62,7 @@ export default function IndexPage(params: IndexPageArgs) {
 
 
     const subPages = params.subPages.map(x => {
-        return <Route path={"/" + x.linkPageUrl} element={x.linkPage}/>
+        return <Route path={"/" + x.linkPageUrl + "/*"} element={x.linkPage}/>
     })
 
     return (
