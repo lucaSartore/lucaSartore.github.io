@@ -42,8 +42,8 @@ function MorpheusPage() {
                         typingTime={1500}
 						items={[
 							{
-								className: "font-size-medium custom-font",
 								text: "Let’s have some fun!",
+								className: "font-size-medium custom-font",
 							},
 							{
 								className: "font-size-small custom-font",
@@ -55,7 +55,8 @@ function MorpheusPage() {
 							},
 							{
 								className: "font-size-small custom-font",
-								text: `Remember that if you change your mind you can always refresh the website and choose the blue pill.`, },
+								text: `Remember that if you change your mind you can always refresh the website and choose the blue pill.`,
+                            },
 						]}
 					/>
 
