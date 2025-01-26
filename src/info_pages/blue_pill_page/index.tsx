@@ -23,7 +23,7 @@ export default function BluePillPage() {
                 },
                 {
                     title: "Portfolio",
-                    description: "Explore my portfolio showcasing (hopefully) some of my most interesting projects.",
+                    description: "Explore my portfolio showcasing some of my most interesting projects.",
                     linkPage: <h1>Welcome to the portfolio Page</h1>,
                     linkPageUrl: "portfolio",
                     emoji: "📁"
