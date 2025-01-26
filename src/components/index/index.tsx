@@ -52,6 +52,8 @@ export default function IndexPage(params: IndexPageArgs) {
 
     }
 
+    itemsList.push(<br/>)
+
     const paragraph = <TypingParagraph
         typingTime={1500}
         defaultStatus="TYPING"
