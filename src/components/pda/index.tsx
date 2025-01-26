@@ -2,7 +2,7 @@ import pda_img from "../../assets/pda.png";
 import desk_img from "../../assets/desk_3.jpg";
 import "./index.css"
 import "./themes.css"
-import { forwardRef, ReactNode, useImperativeHandle, useRef, useState } from "react";
+import {  ReactNode, useRef, useState } from "react";
 import { NavigationBar } from "./navigation_bar";
 import { NavigationBarParams } from "./navigation_bar";
 import { isMobileMode } from "../settings_provider/mobile_settings_provider";
