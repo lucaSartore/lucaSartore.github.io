@@ -14,7 +14,10 @@ export type NavigationBarParams = {
 
 export function NavigationBar(params: NavigationBarParams){
     const location = useLocation();
-    const pathName = location.pathname.slice(1).replace("/", " > ");
+    console.log(location.pathname.slice(1))
+    const pathName = location.pathname.slice(1).replaceAll("/", " > ");
+    console.log(pathName)
+
 
     const backButtonCallback = params.backButtonCallback || (() => {});
     const fullScreenButtonCallback = params.fullScreenButtonCallback  || (() => {});
