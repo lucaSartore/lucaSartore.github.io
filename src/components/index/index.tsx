@@ -1,7 +1,6 @@
-import PdaPage from "../pda";
 import { TypingParagraph, TypingTextProps } from "../textbox";
 import "../pda/themes.css"
-import { Route, Routes, useLocation, useNavigate } from "react-router";
+import { Route, Routes, useNavigate } from "react-router";
 import { GetStartTypingTimeout } from "../../util";
 import "./index.css"
 
@@ -13,8 +12,8 @@ export type IndexPageArgs = {
 
 
 export default function IndexPage(params: IndexPageArgs) {
-    const navigate = useNavigate()
 
+    const navigate = useNavigate()
     var itemsList: Array<TypingTextProps | JSX.Element> = [];
 
     itemsList.push({
@@ -68,18 +67,10 @@ export default function IndexPage(params: IndexPageArgs) {
 
     return (
         <>
-            <PdaPage
-                navigationBarParams={{
-                    // go back only if we are not already at the root page
-                    backButtonCallback: useLocation().pathname == "/blue_pill" ? () => { } : () => navigate(-1),
-                    exitButtonCallback: () => navigate("/")
-                }}
-            >
-                <Routes>
-                    <Route path="/" element={paragraph} />
-                    {subPages}
-                </Routes>
-            </PdaPage>
+            <Routes>
+                <Route path="/" element={paragraph} />
+                {subPages}
+            </Routes>
         </>
     )
 }
